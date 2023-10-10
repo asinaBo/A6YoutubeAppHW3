@@ -16,5 +16,5 @@ interface ApiService {
         channelId: String,
         @Query("maxResults")
         maxResults: Int
-    ): Call<PlaylistsModel>
+    ): Call<PlaylistsModel>  //  ): Response<PlaylistsModel
 }
