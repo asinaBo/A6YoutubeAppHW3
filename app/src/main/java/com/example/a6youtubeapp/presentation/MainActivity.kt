@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         BuildConfig.API_KEY
         BuildConfig.BASE_URL
     }
-
+companion object{
+    val retrofitClient = RetrofitClient().createApiService()
+  //  private val remoteDataSource = RemoteDataSource(retrofitClient)
+    val repository = Repository(retrofitClient)
+}
 
 }

@@ -11,11 +11,12 @@ import com.example.a6youtubeapp.core.network.RetrofitClient
 import com.example.a6youtubeapp.core.utils.Status
 import com.example.a6youtubeapp.databinding.FragmentPlaylistsBinding
 import com.example.a6youtubeapp.domain.repository.Repository
+import com.example.a6youtubeapp.presentation.MainActivity
 
 class PlaylistsFragment : BaseFragment<FragmentPlaylistsBinding>() { // podkluchit base fragnebt
 
     private val playListViewModel =
-        PlaylistsViewModel(Repository(RetrofitClient().createApiService()))
+        PlaylistsViewModel(MainActivity.repository)
     private val adapter = PlaylistsAdapter()
 
     override fun inflaterViewBinding(
@@ -32,8 +33,9 @@ class PlaylistsFragment : BaseFragment<FragmentPlaylistsBinding>() { // podkluch
                     resource.data?.let {
                         adapter.addData(it.items)
                         binding.rcView.adapter = adapter
+                        Log.e("the", "data: ${resource.message}")
                     }
-                    Log.e("the", "data: ${resource.message}")
+
                 }
 
                 Status.ERROR -> {

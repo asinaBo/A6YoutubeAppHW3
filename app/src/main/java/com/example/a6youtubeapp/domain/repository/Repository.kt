@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-internal class Repository(private val apiService: ApiService) {
+class Repository(private val apiService: ApiService) {
 
     fun getPlaylists(): LiveData<Resource<PlaylistsModel>> {
         val resourceData = MutableLiveData<Resource<PlaylistsModel>>()
