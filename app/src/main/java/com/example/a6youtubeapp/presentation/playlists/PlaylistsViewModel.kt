@@ -8,7 +8,7 @@ import com.example.a6youtubeapp.data.model.PlaylistsModel
 import com.example.a6youtubeapp.domain.repository.Repository
 
 
-internal class PlaylistsViewModel(private val repository: Repository) : BaseViewModel() {
+class PlaylistsViewModel(private val repository: Repository) : BaseViewModel() {
 
     fun getPlaylists(): LiveData<Resource<PlaylistsModel>> {
         return repository.getPlaylists()

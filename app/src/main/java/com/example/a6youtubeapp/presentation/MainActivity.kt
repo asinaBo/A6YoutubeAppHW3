@@ -8,6 +8,7 @@ import com.example.a6youtubeapp.core.network.RetrofitClient
 import com.example.a6youtubeapp.databinding.ActivityMainBinding
 import com.example.a6youtubeapp.domain.repository.Repository
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

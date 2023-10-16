@@ -9,10 +9,12 @@ import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
 
-abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     protected var _binding: VB? = null
     protected val binding get() = _binding!!
+    protected abstract val viewModel: VM
+
     protected abstract fun inflaterViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -29,7 +31,8 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setConnection()
     }
-}
 
+    abstract fun setConnection()
+}
